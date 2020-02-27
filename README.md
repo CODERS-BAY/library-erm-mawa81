@@ -15,6 +15,28 @@ Customers can also reserve books, each reservation usually results in a loan.
 The books and magazines are stored on shelves. A journal is placed on a shelf, 
 and each shelf is assigned a subject area for the storage of the books.
 
-book(bjID: int, title:varchar(32), copies:int)
+#### Notes:
+
+booksAndJournalsIndex(BAID: int, title:varchar(32), copies:int, PHID:int) <br>
+book(BID:int, copyNumber:int, AuthorID:int, translationID:int, shelvePlace:int) <br>
+journal(JID:int, title:varchar(32), shelveNumber:int) <br> 
+article(ArtID:int, title:varchar(32), AuthorID:int, subjectID:int, referenceArticleID:int, shelveNumber:int ) <br>
+author(AuthorID:int, name:varchar(32))
+publishingHouse(PHID:int, name:varchar(32), address:varchar(32)) <br>
+customer(CID:int, name:varchar(32)) <br>
+employee(EID:int, name:varchar(32)) <br>
+
+loan(LID:int, BID:int, copyNumber:int, borrowedBy:int, reservedFor:int, borrowDate:date, returnDate:date, borrowEmployee:int, returnEmployee:int) <br>
+
+keyword(KID:int, word:varchar(32), SID:int, relevance:int, hasSynonymous:) <br>
+keywordSynonym(KID:int,SynonymID:int, SynonymWord:varchar(32)) <br>
+subject(SID:int, word:varchar(32)) <br>
+shelve(shelvePlace:int, shelveNr:int)
+
+#### own ERM
 
 ![Own ERM](library_erm01.jpg)
+
+#### group ERM
+
+![group ERM]()
