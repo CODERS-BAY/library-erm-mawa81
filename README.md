@@ -15,6 +15,8 @@ Customers can also reserve books, each reservation usually results in a loan.
 The books and magazines are stored on shelves. A journal is placed on a shelf, 
 and each shelf is assigned a subject area for the storage of the books.
 
+### first solution
+
 #### Notes:
 
 booksAndJournalsIndex(BAID: int, title:varchar(32), copies:int, PHID:int) <br>
@@ -40,3 +42,25 @@ shelve(shelvePlace:int, shelveNr:int)
 #### group ERM
 
 ![group ERM]()
+
+### second solution
+
+#### ERM
+
+![ERM]()
+
+#### textual notation
+
+* book(***bookID***:int(8), title:varchar(32))
+
+
+
+#### SQL
+
+[Link SQL-file](db_library.sql)
+
+```
+CREATE TABLE teacher( teacherID int(8), masterdepartment varchar(32), PRIMARY KEY(teacherID));
+
+```
+![SQL Schema](library_mario.jpg)
