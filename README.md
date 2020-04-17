@@ -51,8 +51,27 @@ shelve(shelvePlace:int, shelveNr:int)
 
 #### textual notation
 
-* book(***bookID***:int(8), title:varchar(32))
+* book(**book_articleID**:int(8), title:varchar(32), *authorslistID*:int(8), *publisherID*:int(8), max_copies:int(8), is_copy:boolean)
+* journal(**journalID**:int(8), title:varchar(32), is_available:boolean)
 
+* articel(**book_articleID**:int(8), title:varchar(32), *authorslistID*:int(8), *journalID*:int(8))
+* authorslist(**authorslistID**:int(8), *book_articleID*:int(8),*authorID*:int)
+* author(authorID:int, name:varchar(32))
+* customer(customerID:int, name:varchar(32))
+book(BID:int, copyNumber:int, AuthorID:int, translationID:int, shelvePlace:int) <br>
+journal(JID:int, title:varchar(32), shelveNumber:int) <br> 
+article(ArtID:int, title:varchar(32), AuthorID:int, subjectID:int, referenceArticleID:int, shelveNumber:int ) <br>
+
+publishingHouse(PHID:int, name:varchar(32), address:varchar(32)) <br>
+ 
+employee(EID:int, name:varchar(32))
+
+loan(LID:int, BID:int, copyNumber:int, borrowedBy:int, reservedFor:int, borrowDate:date, returnDate:date, borrowEmployee:int, returnEmployee:int) <br>
+
+keyword(KID:int, word:varchar(32), SID:int, relevance:int, hasSynonymous:) <br>
+keywordSynonym(KID:int,SynonymID:int, SynonymWord:varchar(32)) <br>
+subject(SID:int, word:varchar(32)) <br>
+shelve(shelvePlace:int, shelveNr:int)
 
 
 #### SQL
