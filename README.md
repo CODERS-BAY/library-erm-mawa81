@@ -45,7 +45,7 @@ shelve(shelvePlace:int, shelveNr:int)
 
 #### ERM
 
-![ERM]()
+![ERM](library_erm_mario.jpg)
 
 #### textual notation
 
